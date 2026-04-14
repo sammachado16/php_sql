@@ -6,14 +6,30 @@
 	<link rel="stylesheet" href="estilo/estilo.css"/>
 </head>
 <body>
+	<?php
+		require_once "includes/banco.php";
+	?>
 	<div id="corpo">
 		<h1>Escolha seu jogo</h1>	
-		<table class="listagem"/>
-			<tr><td>Foto<td>Nome<td>Admin
-			<tr><td>Foto<td>Nome<td>Admin
-			<tr><td>Foto<td>Nome<td>Admin
-			<tr><td>Foto<td>Nome<td>Admin
+		<table class="listagem">
+			<?php
+				$busca = $banco->query("select * from jogos order by nome");
+				if(!$busca) {
+					echo "<tr><td>Infelizmente a busca deu errado";
+				} else { 
+					if ($busca->num_rows == 0) {
+						echo "<tr><td>Nenhum registro encontrado";
+					} else {
+						while ($reg = $busca->fetch_object()) {
+							echo "<tr><td>$reg->capa<td>$reg->nome";
+							echo "<td>Adm";
+						}
+					}
+				}
+					
+			?>
 		</table>
 	</div>
+	<?php $banco->close();?>
 </body>
 </html>
