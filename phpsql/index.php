@@ -3,11 +3,13 @@
 <head>
 	<title>Listagem de Jogos</title>
 	<meta charset="UTF-8">
-	<link rel="stylesheet" href="estilo/estilo.css"/>
+	<link rel="stylesheet" href="estilo/estilo.css?v=<?php echo time(); ?>">
+	
 </head>
 <body>
 	<?php
 		require_once "includes/banco.php";
+		require_once "includes/funcoes.php";
 	?>
 	<div id="corpo">
 		<h1>Escolha seu jogo</h1>	
@@ -21,7 +23,8 @@
 						echo "<tr><td>Nenhum registro encontrado";
 					} else {
 						while ($reg = $busca->fetch_object()) {
-							echo "<tr><td>$reg->capa<td>$reg->nome";
+							$t = thumb($reg->capa);
+							echo "<tr><td><img src=$t class='mini'/><td>$reg->nome";
 							echo "<td>Adm";
 						}
 					}

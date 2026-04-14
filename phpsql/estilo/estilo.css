@@ -1,6 +1,6 @@
 body {
 	background-color: #ddd;
-	font-family: Tahoma;
+	font-family: Times New Roman;
 }
 
 div#corpo {
@@ -36,4 +36,8 @@ table.listagem td:nth-child(1) {
 
 table.listagem td:nth-child(3) {
 	width: 90px;
+}
+
+img.mini {
+	width: 50px;
 }
