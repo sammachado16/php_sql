@@ -18,10 +18,10 @@
 		<h1>Escolha seu jogo</h1>
 		<form method="get" id="busca" action="index.php">
 			Ordenar: 
-				<a href="index.php?o=n">Nome</a> | 
-				<a href="index.php?o=p">Produtora</a> | 
-				<a href="index.php?o=na">Nota Alta</a> | 
-				<a href="index.php?o=nb">Nota Baixa</a> | 
+				<a href="index.php?o=n&c=<?php echo $chave;?>">Nome</a> | 
+				<a href="index.php?o=p&c=<?php echo $chave;?>">Produtora</a> | 
+				<a href="index.php?o=na&c=<?php echo $chave;?>">Nota Alta</a> | 
+				<a href="index.php?o=nb&c=<?php echo $chave;?>">Nota Baixa</a> | 
 				<a href="index.php">Mostrar Todos</a> |
 				Buscar: <input type="text" name="c" size="10" maxlenght="40"/>
 			<input type="submit" value="Ok"/>
