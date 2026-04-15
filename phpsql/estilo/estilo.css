@@ -42,6 +42,19 @@ table.detalhes {
 	width: 100%;
 }
 
+table.detalhes td {
+	padding: 10px;
+	vertical-align: top;
+}
+
+table.detalhes h3 {
+	margin-bottom: 0px;
+}
+
 img.mini {
 	width: 50px;
+}
+
+img.full {
+	height:400px;
 }
