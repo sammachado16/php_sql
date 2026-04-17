@@ -7,4 +7,8 @@
 			return $caminho;
 		}
 	}
+
+	function voltar() {
+		return "<a href='index.php'><span class='material-symbols-outlined'>arrow_back </span></a>";
+	}
 ?>

@@ -4,6 +4,7 @@
 	<title>Título da Página</title>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="estilo/estilo.css?v=<?php echo time(); ?>">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=arrow_back" />
 </head>
 <body>
 	<?php
@@ -36,7 +37,7 @@
 				}
 			?>
 		</table>
-		<a href="index.php"><img src="icones/icoback.png"/></a>
+		<?php echo voltar()?>
 	</div>
 	<?php include_once "rodape.php";?>
 </body>
