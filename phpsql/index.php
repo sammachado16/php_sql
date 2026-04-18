@@ -4,6 +4,8 @@
 	<title>Listagem de Jogos</title>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="estilo/estilo.css?v=<?php echo time(); ?>">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
 	
 </head>
 <body>
@@ -16,6 +18,11 @@
 	<div id="corpo">
 		<?php include_once "topo.php"; ?>
 		<h1>Escolha seu jogo</h1>
+		<?php 
+			echo msg_sucesso(" Arquivo aberto com sucesso!");
+			echo msg_aviso(" Você esqueceu de colocar o nome!");
+			echo msg_erro(" Falha no cadastro do jogo!");
+		?>
 		<form method="get" id="busca" action="index.php">
 			Ordenar: 
 				<a href="index.php?o=n&c=<?php echo $chave;?>">Nome</a> | 
