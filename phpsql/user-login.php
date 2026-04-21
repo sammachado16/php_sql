@@ -33,19 +33,20 @@
                 $q = "SELECT usuario, nome, senha, tipo FROM usuarios WHERE usuario = '$u' LIMIT 1";
                 $busca = $banco->query($q);
                 if(!$busca) {
-                    echo msg_erro('Falha ao acessar o banco!');
+                    echo msg_erro(' Falha ao acessar o banco!');
                 } else {
                     $reg = $busca->fetch_object();
                     if (testarHash($s, $reg->senha)) {
-                        echo msg_sucesso('Logado com sucesso');
+                        echo msg_sucesso(' Logado com sucesso');
+                        $_SESSION['user'] = $reg->usuario;
+                        $_SESSION['nome'] = $reg->nome;
+                        $_SESSION['tipo'] = $reg->tipo;
                     } else {
                         echo msg_erro(' Senha inválida');
-                        echo $reg->senha . "<br>";
-                        $hash = password_hash($s, PASSWORD_DEFAULT);
-                        echo $hash;
                     }
                 }
             }
+            echo voltar();
         ?>
     </div>
 </body>

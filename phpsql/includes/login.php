@@ -17,14 +17,18 @@ if (!isset($_SESSION['user'])){
     }
 
     function gerarHash($senha) {
-        $txt = cripto($senha);
-        $hash = password_hash($txt, PASSWORD_DEFAULT);
+        $hash = password_hash($senha, PASSWORD_DEFAULT);
         return $hash;
     }
 
     function testarHash($senha, $hash) {
-        $ok = password_verify(cripto($senha), $hash);
+        $ok = password_verify($senha, $hash);
         return $ok;
     }
 
+    function logout() {
+        unset($_SESSION['user']);
+        unset($_SESSION['nome']);
+        unset($_SESSION['tipo']);
+    }
 ?>

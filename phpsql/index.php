@@ -19,11 +19,6 @@
 	<div id="corpo">
 		<?php include_once "topo.php"; ?>
 		<h1>Escolha seu jogo</h1>
-		<?php 
-			echo msg_sucesso(" Arquivo aberto com sucesso!");
-			echo msg_aviso(" Você esqueceu de colocar o nome!");
-			echo msg_erro(" Falha no cadastro do jogo!");
-		?>
 		<form method="get" id="busca" action="index.php">
 			Ordenar: 
 				<a href="index.php?o=n&c=<?php echo $chave;?>">Nome</a> | 
