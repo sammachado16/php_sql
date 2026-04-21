@@ -1,6 +1,17 @@
 <?php
+
+    function cripto($senha) {
+        $c = '';
+        for($pos = 0; $pos < strlen($senha); $pos++) {
+            $letra = ord($senha[$pos]) + 1;
+            $c .= chr($letra);
+        }
+        return $c;
+    }
+
     function gerarHash($senha) {
-        $hash = password_hash($senha, PASSWORD_DEFAULT);
+        $txt = cripto($senha);
+        $hash = password_hash($txt, PASSWORD_DEFAULT);
         return $hash;
     }
 
@@ -9,5 +20,4 @@
         return $ok;
     }
 
-echo gerarHash('senha');
 ?>
