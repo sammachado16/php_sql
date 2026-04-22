@@ -4,7 +4,7 @@
 	<title>Título da Página</title>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="estilo/estilo.css?v=<?php echo time(); ?>">
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=arrow_back" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 <body>
 	<?php
@@ -30,6 +30,13 @@
 						echo "<tr><td rowspan='3'><img src='$t' class='full'/>";
 						echo "<td><h2>$reg->nome</h2>";
 						echo "<h3>Nota: " . number_format($reg->nota, 1) . "/10.0</h3>";
+						if (is_admin()) {
+								echo "<span class='material-symbols-outlined'>add_circle</span>";
+								echo "<span class='material-symbols-outlined'>edit</span>";
+								echo "<span class='material-symbols-outlined'>delete</span>";									
+							} elseif (is_editor()) {
+								echo "<span class='material-symbols-outlined'>edit</span>";
+							}
 						echo "<tr><td>$reg->descricao";
 						echo "<tr><td>Adm";
 					} else {
