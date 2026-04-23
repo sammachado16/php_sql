@@ -47,5 +47,6 @@
             echo voltar();
         ?>
     </div>
+    <?php require_once "rodape.php"; ?>
 </body>
 </html>
